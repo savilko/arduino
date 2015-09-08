@@ -10,16 +10,16 @@ long microtime = 0;
 const int slaveDeviceID = 5;
 
 const int well_pump = 8;
-const uint32_t MAX_WELL_PUMP_OPERATION_TIME = 60*60; // 2 hours;
-const uint32_t MAX_WELL_PUMP_INTERVAL_BETWEEN_OPERATIONS = 60*60; //1 min;
-const uint32_t WELL_PUMP_START_LEVEL = 75; 
-const uint32_t WELL_PUMP_STOP_LEVEL = 90; 
+const uint32_t MAX_WELL_PUMP_OPERATION_TIME = 60*60*2; // 2 hours;
+const uint32_t MAX_WELL_PUMP_INTERVAL_BETWEEN_OPERATIONS = 60*60; //1 hour;
+const uint32_t WELL_PUMP_START_LEVEL = 90; 
+const uint32_t WELL_PUMP_STOP_LEVEL = 96; 
 uint32_t well_pump_last_start = 0;
 uint32_t well_pump_last_stop = 0;
 
 const int sprayers_pump = 7;
-const uint32_t MAX_SPRAYERS_PUMP_OPERATION_TIME = 60*60*4; // 4 hours;
-const uint32_t MAX_SPRAYERS_PUMP_INTERVAL_BETWEEN_OPERATIONS = 60*60; //1 min;
+const uint32_t MAX_SPRAYERS_PUMP_OPERATION_TIME = 60*30; // 30 min;
+const uint32_t MAX_SPRAYERS_PUMP_INTERVAL_BETWEEN_OPERATIONS = 60*60; //1 hour;
 const uint32_t SPRAYERS_PUMP_STOP_MINIMUM_LEVEL = 15; 
 const uint32_t SPRAYERS_PUMP_START_MINIMUM_LEVEL = 30; 
 uint32_t sprayers_pump_last_start = 0;
@@ -33,10 +33,10 @@ long last_restart_slave_time = millis();
 
 const int reset_wifi_pin = 6;
 
-int on_hours[] = {0.2}; // Will be ON from 22:00 to 22:59; 
+int on_hours[] = {0}; // Will be ON from 00:00 to 00:59; 
 
 const int critical_min_water_level = 10; 
-const int critical_max_water_level = 95; 
+const int critical_max_water_level = 98; 
 
 int level_trig = 9;
 int level_echo = 10;
